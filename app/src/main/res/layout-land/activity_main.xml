@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/godLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context="com.example.android.calculator.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/displayLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/numbersLinearLayout"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <HorizontalScrollView
+            android:id="@+id/displayOperationNumberScroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/displayOperationNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:hint="..."
+                android:maxLines="1"
+                android:onClick="clickOperationsDisplay"
+                android:textColor="#757575"
+                android:textColorHint="#616161"
+                android:textSize="25sp" />
+
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/displayNumberScroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/displayNumberScroller"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/displayNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="8dp"
+                android:hint="0"
+                android:maxLines="1"
+                android:onClick="clickNumberDisplay"
+                android:textColor="#616161"
+                android:textColorHint="#616161"
+                android:textSize="45sp" />
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/numbersLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/firstLine"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSin"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_functions"
+                android:onClick="clickButtonSin"
+                android:text="Sin"
+                android:textColor="#311B92"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonCos"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_functions"
+                android:onClick="clickButtonCos"
+                android:text="Cos"
+                android:textColor="#311B92"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonTan"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_functions"
+                android:onClick="clickButtonTan"
+                android:text="Tan"
+                android:textColor="#311B92"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonBracketsOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_functions"
+                android:onClick="clickButtonBracketsOpen"
+                android:text="("
+                android:textColor="#6200EA"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonBracketsClose"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_functions"
+                android:onClick="clickButtonBracketsClose"
+                android:text=")"
+                android:textColor="#6200EA"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/secondLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonCE"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_operators"
+                android:elevation="0dp"
+                android:text="DEL"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton7"
+                android:text="7"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton8"
+                android:text="8"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton9"
+                android:text="9"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonSum"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButtonAddition"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thirdLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonRoot"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_operators"
+                android:elevation="0dp"
+                android:onClick="clickButtonSquareRoot"
+                android:text="√"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton4"
+                android:text="4"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton5"
+                android:text="5"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton6"
+                android:text="6"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonSubtraction"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButtonSubtraction"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/forthLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonExponentation"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_operators"
+                android:elevation="0dp"
+                android:onClick="clickButtonExponentation"
+                android:text="^"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton1"
+                android:text="1"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton2"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton3"
+                android:text="3"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonMultiplication"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButtonMultiplication"
+                android:text="x"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fifthLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonPI"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_operators"
+                android:elevation="0dp"
+                android:onClick="clickButtonPI"
+                android:text="π"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonDot"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButtonDot"
+                android:text="."
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButton0"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonEqaul"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButtonEqual"
+                android:text="="
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonDivision"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect_numbers"
+                android:onClick="clickButtonDivision"
+                android:text="/"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
